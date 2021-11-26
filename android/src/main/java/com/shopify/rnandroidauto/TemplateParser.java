@@ -315,7 +315,9 @@ public class TemplateParser {
         }
 
         try {
-            builder.setMetadata(parseMetaData(rowRenderMap.getMap("metadata")));
+            ReadableMap map = rowRenderMap.getMap("metadata");
+
+            builder.setMetadata(parseMetaData(map));
         } catch (NoSuchKeyException e) {
         }
 
